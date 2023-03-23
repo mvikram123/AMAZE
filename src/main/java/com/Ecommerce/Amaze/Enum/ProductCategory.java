@@ -1,6 +1,6 @@
 package com.Ecommerce.Amaze.Enum;
 
-public enum Category {
+public enum ProductCategory {
     SPORTS,
     FASHION,
     ELECTRONICS

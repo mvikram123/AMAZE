@@ -29,5 +29,5 @@ public class Seller {
     private String panNo;
 
     @OneToMany(mappedBy = "seller",cascade = CascadeType.ALL)
-    List<Product> product;
+    List<Product> products=new ArrayList<>();
 }
