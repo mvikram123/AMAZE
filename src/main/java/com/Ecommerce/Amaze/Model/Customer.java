@@ -1,6 +1,7 @@
 package com.Ecommerce.Amaze.Model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Builder
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,6 +21,7 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private int age;
     @Column(unique = true)
     private String email;
     @Column(unique = true)
@@ -27,7 +30,8 @@ public class Customer {
    // List<Card> cards= new ArrayList<>();
 
         @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-        List<Card> card=new ArrayList<>();
+
+         List<Card> card=new ArrayList<>();
     @OneToOne(mappedBy = "customer",cascade = CascadeType.ALL)
    Cart cart;
 
